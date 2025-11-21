@@ -1496,7 +1496,7 @@ main {
     box-shadow: 0 0 0 rgba(248, 181, 0, 0);
   }
   50% {
-    box-shadow: 0 0 26px rgba(248, 181, 0, 0.7);
+    box-shadow: 0 0 26px rgba(239, 190, 55, 0.7);
   }
   100% {
     box-shadow: 0 0 0 rgba(248, 181, 0, 0);
@@ -1621,3 +1621,4 @@ main {
     height: 110px;
   }
 }
+
