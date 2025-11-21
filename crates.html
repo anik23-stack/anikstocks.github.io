@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crate Keys | Legacy Stock Store</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="top-bar">
+    <span>Spin premium crates and win rare items, cosmetics and boosters.</span>
+  </div>
+
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">
+        <span class="logo-icon">⛏</span>
+        <span class="logo-text">AnikStocks</span>
+      </div>
+      <span class="server-ip" id="copy-ip">play.coming.soon</span>
+    </div>
+
+    <nav class="nav-right">
+      <a href="index.html#packages" class="nav-link">Store</a>
+      <a href="ranks.html" class="nav-link">Ranks</a>
+      <a href="crates.html" class="nav-link active">Crates</a>
+      <a href="cosmetics.html" class="nav-link">Cosmetics</a>
+      <a href="index.html#how-to-buy" class="nav-link">How to buy</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+      <a href="index.html#support" class="nav-link nav-support">Support</a>
+
+      <div class="currency-wrapper">
+        <button class="currency-toggle" id="currency-toggle">
+          <span id="currency-label">USD</span>
+          <span class="currency-caret">▾</span>
+        </button>
+        <div class="currency-menu" id="currency-menu">
+          <button data-currency="USD">$ USD</button>
+          <button data-currency="INR">₹ INR</button>
+          <button data-currency="EUR">€ EUR</button>
+        </div>
+      </div>
+
+      <button id="cart-button" class="cart-button">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle">☰</button>
+  </header>
+
+  <a href="index.html#packages" class="back-chip">← Back to Store</a>
+
+  <section class="page-hero container" data-reveal>
+    <div class="page-tag">Crate Keys</div>
+    <h1 class="page-title">Crate Key Bundles</h1>
+    <p class="page-subtitle">
+      Purchase keys for different crate tiers. Open crates in-game at spawn to unlock rewards.
+    </p>
+  </section>
+
+  <main class="container page-main" data-reveal>
+    <div class="item-grid crate-grid">
+      <!-- Basic -->
+      <article class="item-card crate-card crate-basic">
+        <div class="item-logo-slot">
+          <span class="item-logo-placeholder">Basic</span>
+        </div>
+        <div class="item-content">
+          <h2 class="item-title">Basic Crate Keys</h2>
+          <p class="item-sub">Great for new players to start spinning.</p>
+          <ul class="item-perks">
+            <li>Common → Rare loot</li>
+            <li>Small coin & XP chunks</li>
+            <li>Chance for low-tier cosmetics</li>
+            <li>Use /crates at spawn</li>
+          </ul>
+          <div class="item-bottom">
+            <div class="item-price">
+              <span class="item-price-main" data-price-usd="4.99">$4.99</span>
+              <span class="item-price-tag">5 keys bundle</span>
+            </div>
+            <button class="primary-btn item-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Rare -->
+      <article class="item-card crate-card crate-rare">
+        <div class="item-logo-slot">
+          <span class="item-logo-placeholder">Rare</span>
+        </div>
+        <div class="item-content">
+          <h2 class="item-title">Rare Crate Keys</h2>
+          <p class="item-sub">Higher chance for rare & epic loot.</p>
+          <ul class="item-perks">
+            <li>Rare → Epic loot pool</li>
+            <li>Better coin & XP stacks</li>
+            <li>Chance for limited cosmetics</li>
+            <li>Special sound & animation</li>
+          </ul>
+          <div class="item-bottom">
+            <div class="item-price">
+              <span class="item-price-main" data-price-usd="9.99">$9.99</span>
+              <span class="item-price-tag">10 keys bundle</span>
+            </div>
+            <button class="primary-btn item-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Omega -->
+      <article class="item-card crate-card crate-omega">
+        <div class="item-logo-slot">
+          <span class="item-logo-placeholder">Omega</span>
+        </div>
+        <div class="item-content">
+          <h2 class="item-title">Omega Crate Keys</h2>
+          <p class="item-sub">Best chance for legendary rewards.</p>
+          <ul class="item-perks">
+            <li>Epic → Legendary loot only</li>
+            <li>Huge coin & XP bundles</li>
+            <li>Exclusive seasonal cosmetics</li>
+            <li>Custom crate animation</li>
+          </ul>
+          <div class="item-bottom">
+            <div class="item-price">
+              <span class="item-price-main" data-price-usd="19.99">$19.99</span>
+              <span class="item-price-tag">10 keys bundle</span>
+            </div>
+            <button class="primary-btn item-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">✕</button>
+    </div>
+    <div class="cart-body">
+      <div class="ign-input">
+        <label for="ign">Minecraft Username</label>
+        <input type="text" id="ign" placeholder="Your in-game name" />
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-empty" id="cart-empty">
+        Your cart is empty. Add a package to get started!
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        Total: <span id="cart-total">$0.00</span>
+      </div>
+      <button class="primary-btn full-width" id="checkout-btn">Proceed to Checkout</button>
+      <p class="cart-note">This is a demo store UI – integrate your own payment gateway on the backend.</p>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo footer-logo">
+          <span class="logo-icon">⛏</span>
+          <span class="logo-text">AnikStocks</span>
+        </div>
+        <p class="footer-note">
+          Legacy Stock / AnikStocks is not affiliated with or endorsed by Mojang AB or Microsoft.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="index.html#support">Support</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Legacy Stock Network. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

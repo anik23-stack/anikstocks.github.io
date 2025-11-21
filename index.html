@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnikStocks | Legacy Stock Store</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Top notification bar -->
+  <div class="top-bar">
+    <span>⚡ Limited-time offer: Use code <strong>AnikOP</strong> for 100% off (demo)!</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">
+        <span class="logo-icon">⛏</span>
+        <span class="logo-text">AnikStocks</span>
+      </div>
+      <span class="server-ip" id="copy-ip">play.coming.soon</span>
+    </div>
+
+    <nav class="nav-right">
+      <a href="#packages" class="nav-link">Store</a>
+      <a href="ranks.html" class="nav-link">Ranks</a>
+      <a href="crates.html" class="nav-link">Crates</a>
+      <a href="cosmetics.html" class="nav-link">Cosmetics</a>
+      <a href="#how-to-buy" class="nav-link">How to buy</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#support" class="nav-link nav-support">Support</a>
+
+      <!-- Currency switcher -->
+      <div class="currency-wrapper">
+        <button class="currency-toggle" id="currency-toggle">
+          <span id="currency-label">USD</span>
+          <span class="currency-caret">▾</span>
+        </button>
+        <div class="currency-menu" id="currency-menu">
+          <button data-currency="USD">$ USD</button>
+          <button data-currency="INR">₹ INR</button>
+          <button data-currency="EUR">€ EUR</button>
+        </div>
+      </div>
+
+      <button id="cart-button" class="cart-button">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle">☰</button>
+  </header>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#packages">Store</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="crates.html">Crates</a>
+    <a href="cosmetics.html">Cosmetics</a>
+    <a href="#how-to-buy">How to buy</a>
+    <a href="#faq">FAQ</a>
+    <a href="#support">Support</a>
+  </div>
+
+  <!-- Hero section -->
+  <section class="hero" data-reveal>
+    <div class="hero-inner container">
+      <div class="hero-left">
+        <p class="eyebrow">Official Store of</p>
+        <h1>Legacy Stock Network</h1>
+        <p class="hero-subtitle">
+          Support the network and unlock exclusive ranks, crate keys and cosmetics.
+          All packages are delivered instantly while you’re online.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="browse-packages-btn">Browse Categories</button>
+          <button class="secondary-btn" id="copy-ip-hero">Copy Server IP</button>
+        </div>
+
+        <div class="server-status-bar">
+          <div class="server-pill">
+            <span class="status-dot"></span>
+            <span>Server Online</span>
+          </div>
+          <div class="player-count">
+            Players: <span id="player-count">145 / 500</span>
+          </div>
+        </div>
+
+        <!-- Quick category tiles -->
+        <div class="quick-tiles" data-reveal>
+          <a href="ranks.html" class="quick-tile quick-rank">
+            <div class="qt-label">Ranks</div>
+            <div class="qt-sub">Permanent perks & cosmetics</div>
+          </a>
+          <a href="crates.html" class="quick-tile quick-crates">
+            <div class="qt-label">Crate Keys</div>
+            <div class="qt-sub">Spin for insane loot</div>
+          </a>
+          <a href="cosmetics.html" class="quick-tile quick-cosmetics">
+            <div class="qt-label">Cosmetics</div>
+            <div class="qt-sub">Particles, wings & trails</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <h3>Latest Purchases</h3>
+          <ul id="recent-purchases" class="recent-purchases-list">
+            <!-- filled by JS -->
+          </ul>
+
+          <!-- Rank logo strip (placeholders – you will add real images later) -->
+          <div class="rank-logo-strip">
+            <div class="rank-badge rank-badge-vip">
+              <span>VIP</span>
+            </div>
+            <div class="rank-badge rank-badge-mvp">
+              <span>MVP</span>
+            </div>
+            <div class="rank-badge rank-badge-legend">
+              <span>LEGEND</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category showcase instead of product grid -->
+  <main>
+    <section id="packages" class="packages-section container" data-reveal>
+      <header class="section-header">
+        <h2>Browse Store Categories</h2>
+        <p>Choose a category to view all packages in that section.</p>
+      </header>
+
+      <div class="category-grid">
+        <!-- Ranks -->
+        <a href="ranks.html" class="category-card category-ranks">
+          <div class="category-pill">Ranks</div>
+          <h3>Global Rank Store</h3>
+          <p>Purchase ranks like VIP, MVP, Legend and more. Unlock permanent perks and cosmetics across the network.</p>
+          <div class="category-badges">
+            <span>VIP</span>
+            <span>MVP</span>
+            <span>Legend</span>
+            <span>Supreme</span>
+          </div>
+        </a>
+
+        <!-- Crates -->
+        <a href="crates.html" class="category-card category-crates">
+          <div class="category-pill">Crate Keys</div>
+          <h3>Crate Key Bundles</h3>
+          <p>Grab key bundles to spin premium crates and win rare items, boosters, cosmetics and more.</p>
+          <div class="category-badges">
+            <span>Basic</span>
+            <span>Rare</span>
+            <span>Omega</span>
+          </div>
+        </a>
+
+        <!-- Cosmetics -->
+        <a href="cosmetics.html" class="category-card category-cosmetics">
+          <div class="category-pill">Cosmetics</div>
+          <h3>Cosmetic Collections</h3>
+          <p>Stand out in lobbies with wings, auras, trails and more. Purely visual, zero pay-to-win.</p>
+          <div class="category-badges">
+            <span>Wings</span>
+            <span>Halos</span>
+            <span>Trails</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- How to buy -->
+    <section id="how-to-buy" class="how-to-buy-section container" data-reveal>
+      <header class="section-header">
+        <h2>How to buy</h2>
+        <p>Follow these steps to receive your items instantly.</p>
+      </header>
+      <ol class="how-steps">
+        <li>Join the server using the IP above.</li>
+        <li>Open the store and select a category (Ranks, Crates or Cosmetics).</li>
+        <li>Enter your correct Minecraft username at checkout.</li>
+        <li>Complete payment and relog to receive your items.</li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section container" data-reveal>
+      <header class="section-header">
+        <h2>FAQ</h2>
+        <p>Answers to commonly asked questions.</p>
+      </header>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            When will I receive my purchase?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most purchases are delivered within a few minutes. If you don’t receive your items after 15 minutes, contact support with your IGN and transaction ID.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What payment methods do you accept?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We support cards and regional payment methods via our payment provider. All transactions are securely processed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Are ranks pay-to-win?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Ranks mainly offer visual perks and convenience features and do not give unfair advantages in competitive gamemodes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section id="support" class="support-section container" data-reveal>
+      <header class="section-header">
+        <h2>Support</h2>
+        <p>Need help with a purchase or have questions?</p>
+      </header>
+
+      <div class="support-grid">
+        <div class="support-card">
+          <h3>Billing support</h3>
+          <p>Issues with payment or double charge? Open a ticket on our Discord and we’ll assist you as soon as possible.</p>
+          <a href="#" class="primary-link">Join Discord</a>
+        </div>
+        <div class="support-card">
+          <h3>Store questions</h3>
+          <p>Not sure which rank or bundle is best for you? Talk to our staff team for recommendations.</p>
+          <a href="#" class="secondary-link">Email support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">✕</button>
+    </div>
+    <div class="cart-body">
+      <div class="ign-input">
+        <label for="ign">Minecraft Username</label>
+        <input type="text" id="ign" placeholder="Your in-game name" />
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-empty" id="cart-empty">
+        Your cart is empty. Add a package to get started!
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        Total: <span id="cart-total">$0.00</span>
+      </div>
+      <button class="primary-btn full-width" id="checkout-btn">Proceed to Checkout</button>
+      <p class="cart-note">This is a demo store UI – integrate your own payment gateway on the backend.</p>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo footer-logo">
+          <span class="logo-icon">⛏</span>
+          <span class="logo-text">AnikStocks</span>
+        </div>
+        <p class="footer-note">
+          Legacy Stock / AnikStocks is not affiliated with or endorsed by Mojang AB or Microsoft.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#support">Support</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Legacy Stock Network. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
