@@ -542,3 +542,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setupPageEffects();
   setupCurrencySwitcher();
 });
+// === Fake live player count animation ===
+(function () {
+  const el = document.getElementById("player-count-value");
+  if (!el) return;
+
+  let base = 1200;    // min players
+  let max = 2200;     // max players
+
+  function randomStep() {
+    // -25 se +40 tak random change
+    const delta = Math.floor(Math.random() * 65) - 25;
+    base = Math.min(max, Math.max(800, base + delta));
+    el.textContent = base.toLocaleString("en-US");
+  }
+
+  randomStep();
+  setInterval(randomStep, 3500);
+})();
+// ===============================
