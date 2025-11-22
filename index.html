@@ -71,7 +71,8 @@
   </div>
 
   <!-- Hero section -->
-  <section class="hero" data-reveal>
+  <section class="hero hero-art" data-reveal>
+
     <div class="hero-inner container">
       <div class="hero-left">
         <p class="eyebrow">Official Store of</p>
@@ -80,6 +81,8 @@
           Support the network and unlock exclusive ranks, crate keys and cosmetics.
           All packages are delivered instantly while you’re online.
         </p>
+        
+
 
         <div class="hero-actions">
           <button class="primary-btn" id="browse-packages-btn">Browse Categories</button>
@@ -89,10 +92,10 @@
          <div class="server-status-bar">
           <div class="server-pill">
             <span class="status-dot"></span>
-            <span>Server Online</span>
+            <span>Server Closed</span>
           </div>
           <span class="player-count">
-        <span id="player-count-value">1213</span> players online
+        <span i="player-count-value">00</span> players online  <!--Make span id to on-->
      </span>
 
         </div>
@@ -112,33 +115,9 @@
             <div class="qt-sub">Particles, wings & trails</div>
           </a>
         </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <h3>Latest Purchases</h3>
-          <ul id="recent-purchases" class="recent-purchases-list">
-            <!-- filled by JS -->
-          </ul>
-
-          <!-- Rank logo strip (placeholders – you will add real images later) -->
-          <div class="rank-logo-strip">
-            <div class="rank-badge rank-badge-vip">
-              <span>VIP</span>
-            </div>
-            <div class="rank-badge rank-badge-mvp">
-              <span>MVP</span>
-            </div>
-            <div class="rank-badge rank-badge-legend">
-              <span>LEGEND</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </div>   
   </section>
- 
-   <!-- Event / Discount banner -->
+<!-- Event / Discount banner -->
    <section class="event-banner container" data-reveal>
    <div class="event-pill">Limited Event</div>
    <h2 class="event-title">Weekend Boost: +50% coins on all ranks</h2>
@@ -147,11 +126,10 @@
     Rewards are delivered instantly after checkout.
   </p>
 </section>
-
-
   
-  <!-- Category showcase instead of product grid -->
+    <!-- Category showcase instead of product grid -->
   <main>
+    <!-- STORE CATEGORIES -->
     <section id="packages" class="packages-section container" data-reveal>
       <header class="section-header">
         <h2>Browse Store Categories</h2>
@@ -196,60 +174,46 @@
           </div>
         </a>
       </div>
-    </section>
 
-    <!-- How to buy -->
-    <section id="how-to-buy" class="how-to-buy-section container" data-reveal>
-      <header class="section-header">
-        <h2>How to buy</h2>
-        <p>Follow these steps to receive your items instantly.</p>
-      </header>
-      <ol class="how-steps">
-        <li>Join the server using the IP above.</li>
-        <li>Open the store and select a category (Ranks, Crates or Cosmetics).</li>
-        <li>Enter your correct Minecraft username at checkout.</li>
-        <li>Complete payment and relog to receive your items.</li>
-      </ol>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq-section container" data-reveal>
-      <header class="section-header">
-        <h2>FAQ</h2>
-        <p>Answers to commonly asked questions.</p>
-      </header>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            When will I receive my purchase?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Most purchases are delivered within a few minutes. If you don’t receive your items after 15 minutes, contact support with your IGN and transaction ID.</p>
-          </div>
+      <!-- Rank logo strip now correctly under categories -->
+      <div class="rank-logo-strip">
+        <div class="rank-badge rank-badge-vip">
+          <span>VIP</span>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            What payment methods do you accept?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>We support cards and regional payment methods via our payment provider. All transactions are securely processed.</p>
-          </div>
+        <div class="rank-badge rank-badge-mvp">
+          <span>MVP</span>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Are ranks pay-to-win?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Ranks mainly offer visual perks and convenience features and do not give unfair advantages in competitive gamemodes.</p>
-          </div>
+        <div class="rank-badge rank-badge-legend">
+          <span>LEGEND</span>
         </div>
       </div>
+    </section>
+
+    <!-- HOW TO BUY + LATEST PURCHASES SAME ROW -->
+   <section id="how-to-buy" class="how-section">
+  <div class="how-inner container"
+       style="display:flex;align-items:flex-start;justify-content:space-between;gap:48px;">
+    <!-- LEFT: How to buy -->
+    <div class="how-left" style="flex:2;">
+          <h2>How to buy</h2>
+          <p>Follow these steps to receive your items instantly.</p>
+
+          <ol class="how-steps">
+            <li>Join the server using the IP above.</li>
+            <li>Open the store and select a category (Ranks, Crates or Cosmetics).</li>
+            <li>Enter your correct Minecraft username at checkout.</li>
+            <li>Complete payment and relog to receive your items.</li>
+          </ol>
+        </div>
+
+            <!-- RIGHT: Latest Purchases card -->
+    <div class="hero-card" style="flex:1;margin-top:0;">
+      <h3>Latest Purchases</h3>
+      <ul id="recent-purchases" class="recent-purchases-list">
+        <!-- filled by JS -->
+      </ul>
+    </div>
+  </div>
     </section>
 
     <!-- Support -->

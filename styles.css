@@ -46,7 +46,6 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
-
 /* Scrollbar */
 body::-webkit-scrollbar {
   width: 8px;
@@ -462,18 +461,18 @@ main {
   gap: 8px;
   border-radius: 999px;
   padding: 6px 11px;
-  background: radial-gradient(circle at top, #022c22, #020617);
-  border: 1px solid rgba(34, 197, 94, 0.7);
+  background: radial-gradient(circle at top, #f10303, #410303);
+  border: 1px solid rgba(253, 4, 4, 0.737);
   font-size: 0.8rem;
-  box-shadow: 0 16px 40px rgba(6, 95, 70, 0.9);
+  box-shadow: 0 16px 40px rgba(108, 1, 16, 0.9);
 }
 
 .status-dot {
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  background: #22c55e;
-  box-shadow: 0 0 14px rgba(34, 197, 94, 0.95);
+  background: #dd0303;
+  box-shadow: 0 0 14px rgba(233, 4, 4, 0.95);
 }
 
 .player-count {
@@ -1622,3 +1621,443 @@ main {
   }
 }
 
+/* =========================================
+   ULTRA UI UPGRADE LAYER (OVERRIDE STYLES)
+   Paste this at the VERY END of styles.css
+   ========================================= */
+
+/* Global background & text polish */
+body {
+  background:
+    radial-gradient(circle at top, #020817 0%, #020617 45%, #000 100%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.4) 0,
+      rgba(15, 23, 42, 0.4) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+/* Container breathing space */
+.container {
+  max-width: 1160px;
+}
+
+/* Navbar glass + neon underline */
+.navbar {
+  background: linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.96),
+      rgba(2, 6, 23, 0.98)
+    );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(56, 189, 248, 0.16);
+}
+
+.logo {
+  box-shadow:
+    0 0 26px rgba(56, 189, 248, 0.5),
+    0 0 18px rgba(15, 23, 42, 0.9);
+}
+
+.nav-right .nav-link {
+  padding: 4px 2px;
+}
+
+.nav-right .nav-link::after {
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #fbbf24);
+}
+
+/* Hero upgrade */
+.hero {
+  padding-top: 40px;
+  padding-bottom: 44px;
+}
+
+.hero-left h1 {
+  font-size: 2.6rem;
+  background: linear-gradient(120deg, #fbbf24, #f97316, #38bdf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  color: #9ca3af;
+}
+
+/* Primary / Secondary button upgrade */
+.primary-btn {
+  padding-inline: 22px;
+  padding-block: 9px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  box-shadow:
+    0 18px 35px rgba(248, 181, 0, 0.7),
+    0 0 28px rgba(248, 181, 0, 0.6);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 24px 50px rgba(248, 181, 0, 0.9),
+    0 0 40px rgba(248, 181, 0, 0.75);
+}
+
+.secondary-btn {
+  border-radius: 999px;
+  border-image: linear-gradient(120deg, #38bdf8, #64748b) 1;
+  background: radial-gradient(circle at top, #020617, #020617);
+}
+
+.secondary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.7);
+}
+
+/* Home category cards – smoother UI */
+.category-card {
+  border-radius: 24px;
+  padding: 20px 20px 18px;
+}
+
+.category-card h3 {
+  font-size: 1.12rem;
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: var(--accent-strong);
+  box-shadow:
+    0 26px 55px rgba(15, 23, 42, 0.98),
+    0 0 40px rgba(56, 189, 248, 0.16);
+}
+
+/* Item cards (ranks, crates, cosmetics) – pro look */
+.item-card {
+  border-radius: 24px;
+  padding: 16px 16px 15px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+}
+
+.item-card:hover {
+  transform: translateY(-8px) scale(1.015);
+}
+
+/* Logo slot sharper */
+.item-logo-slot {
+  border-radius: 24px;
+}
+
+/* Rank title typography */
+.item-title {
+  font-size: 1.16rem;
+  letter-spacing: 0.03em;
+}
+
+/* Underline a bit longer on hover */
+.item-card:hover .item-title::after {
+  width: 70%;
+}
+
+/* Rank colours a bit glow-y */
+.rank-vip .item-title {
+  text-shadow: 0 0 14px rgba(74, 222, 128, 0.5);
+}
+.rank-mvp .item-title {
+  text-shadow: 0 0 14px rgba(96, 165, 250, 0.5);
+}
+.rank-mvp-plus .item-title {
+  text-shadow: 0 0 14px rgba(248, 113, 113, 0.55);
+}
+.rank-legend .item-title {
+  text-shadow: 0 0 14px rgba(250, 204, 21, 0.65);
+}
+.rank-supreme .item-title {
+  text-shadow: 0 0 14px rgba(167, 139, 250, 0.7);
+}
+
+/* Event banner – thoda aur pop */
+.event-banner {
+  border-radius: 26px;
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.95),
+    0 0 40px rgba(250, 204, 21, 0.2);
+}
+
+/* Toasts sharper (agar use kar raha hai) */
+.purchase-toast {
+  border-radius: 16px;
+}
+
+/* Footer slim & clean */
+.footer {
+  padding-top: 14px;
+  padding-bottom: 12px;
+  background: radial-gradient(circle at top, #020617, #020617);
+  border-top: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.footer-note {
+  color: #9ca3af;
+}
+
+/* Small responsive polish */
+@media (max-width: 768px) {
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+  .category-card,
+  .item-card {
+    border-radius: 20px;
+  }
+}
+/* ==== GLOBAL PAGE BACKGROUND ==== */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* fallback solid color */
+  background-color: #020617;
+
+  /* your 4K image */
+  background-image: url("img/4k-bg.png");
+
+  /* important settings */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed; /* remove this line if it lags */
+}
+/* ==== HERO ARTWORK BACKGROUND ONLY ON HERO SECTION ==== */
+
+.hero-art {
+  background-image: url("img/sword.png");  /* sword image */
+  background-repeat: no-repeat;
+  background-position: right center;   /* right side par image */
+  background-size: 65%;                /* size adjust, 50–80 try kar sakta hai */
+}
+
+/* Mobile par mess na ho isliye chhote screens par hide kar diya */
+@media (max-width: 768px) {
+  .hero-art {
+    background-image: none;
+  }
+}
+
+
+/* =========================
+   HOW TO BUY + LATEST PURCHASES (CLEAN LAYOUT)
+   ========================= */
+
+.how-section {
+  margin-top: 80px;          /* upper section se gap */
+  margin-bottom: 96px;       /* Support se gap */
+  padding: 16px 0 24px;
+}
+
+/* 2-column layout */
+#how-to-buy .how-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;   /* LEFT wider, RIGHT narrower */
+  align-items: flex-start;
+  gap: 48px;
+}
+
+/* Left side text */
+#how-to-buy .how-left h2 {
+  margin-bottom: 8px;
+}
+
+#how-to-buy .how-left p {
+  margin-bottom: 12px;
+  max-width: 520px;
+}
+
+/* steps list */
+#how-to-buy .how-steps {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+/* Right side card */
+#how-to-buy .hero-card {
+  max-width: 360px;      /* card compact */
+  margin-left: auto;     /* stick to right */
+}
+
+/* ------- MOBILE: stack ------- */
+@media (max-width: 900px) {
+  #how-to-buy .how-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  #how-to-buy .hero-card {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+/* Extra breathing room before Support section */
+.support-section {
+  margin-top: 32px;
+}
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+ 
+/* ===========================
+   BUTTON STYLES
+   =========================== */
+/* Base button polish */
+.primary-btn,
+.secondary-btn,
+.cart-button,
+.currency-toggle {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, background 0.18s ease-out, border-color 0.18s ease-out;
+  transform-origin: center;
+}
+
+/* MAIN button – glow + slight lift */
+.primary-btn {
+  box-shadow: 0 0 0 0 rgba(248, 191, 70, 0.4);
+}
+
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 0%, rgba(255, 243, 199, 0.4), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 0 28px rgba(249, 191, 70, 0.45);
+}
+
+.primary-btn:hover::before {
+  opacity: 1;
+}
+
+.primary-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* SECONDARY button – outline + glow edge */
+.secondary-btn {
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
+}
+
+.secondary-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(96, 165, 250, 0.9);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.85), 0 0 16px rgba(56, 189, 248, 0.4);
+}
+
+.secondary-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
+}
+ .nav-link {
+  position: relative;
+  transition: color 0.18s ease-out, opacity 0.18s ease-out;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #a855f7, #facc15);
+  transition: width 0.22s ease-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+.category-card,
+.hero-card,
+.support-card {
+  transition: transform 0.2s ease-out, box-shadow 0.22s ease-out, background 0.22s ease-out, border-color 0.22s ease-out;
+}
+
+.category-card:hover,
+.support-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
+  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.14), transparent 55%),
+              rgba(15, 23, 42, 0.96);
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+}
+.rank-badge {
+  transition: transform 0.18s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
+  cursor: default;
+}
+
+.rank-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.85);
+}
+.server-pill {
+  transition: transform 0.18s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
+}
+
+.server-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.6);
+}
+
+/* small breathing animation on green dot */
+.status-dot {
+  animation: pulse-status 1.5s infinite ease-out;
+}
+
+@keyframes pulse-status {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.faq-question {
+  transition: background 0.2s ease-out, transform 0.15s ease-out, box-shadow 0.2s ease-out;
+}
+
+.faq-question:hover {
+  transform: translateY(-1px);
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
+}
